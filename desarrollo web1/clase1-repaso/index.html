@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 1</title>
+</head>
+<body>
+    <header>
+        <h1>Bienvendio a madre de diso</h1>
+    </header>
+    <main></main>
+    <form action="">
+
+        <input type="text" name="" id="" maxlength="30" >
+
+        <input type="radio"  id="radio-masculino" name="genero">
+        <label for="radio-masculino">Masculino</label>
+
+        <input type="radio" id="radio-femenino" name="genero">
+        <label for="radio-femenino">Femenino</label>
+
+        <select name="" id="dpt">
+            <option selected disabled value="">Seleccione una opcion</option>
+            <option value="">puerto maldonado</option>
+            <option value="">Lima </option>
+        </select>
+        <br>
+        <br><br><br><br>
+        <h4>
+            pais
+        </h4>
+        <input list="pais">
+        <datalist id="pais" >
+            <option >
+                <p>Lorem.</p>
+            </option>
+            <option >
+                <p>Sit?</p>
+            </option>
+            <option >
+                <p>Neque!</p>
+            </option>
+            <option >
+                <p>Quos.</p>
+            </option>
+            <option >
+                <p>Quas.</p>
+            </option>
+        </datalist>
+
+    </form>
+    <form action="">
+        <br><br><br><br><br>
+        <label for="textoSinNumeros">
+            <p>texto solo con letras no numeros </p>
+        </label>
+        <input type="text" pattern="[a-zA-Z\s]+"  name="" id="textoSinNumeros"  required>
+        <br><br><br>
+        <label for="minData">
+            <p>Input para validar la edad : </p>
+        </label>
+        <input type="number" min="1" max="80" id="minData" >
+        <br><br><br>
+        <label for="valorMaximo">
+            <p>minimo 6 y maximo 12 </p>
+        </label>
+        <input type="text" minlength="6" maxlength="12" id="valorMaximo" required>
+    </form>
+
+
+</body>
+<script>
+    const input = document.getElementById("textoSinNumeros");
+    const numeros = document.getElementById("minData");
+
+    input.addEventListener("input",(tecla)=>{
+        // console.log(tecla)
+        input.value = input.value.replace(/[^A-Za-z\s]/g, '');
+
+    })
+
+
+
+</script>
+</html>
