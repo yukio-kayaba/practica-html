@@ -1,0 +1,72 @@
+
+:root{
+    ---primary-color:#000;
+    --primary-color: #1db954;
+    --secondary-color-01: #000000;
+    --secondary-color-02: #191414;
+    --secondary-color-03: #505050;
+    --secondary-color-04: #ffffff;
+
+    --genre-color01: #55a891;
+    --genre-color02: #27856a;
+    --genre-color03: #5f8109;
+
+    --genre-color05: #f037a5;
+    --genre-color06: #af2896;
+    --genre-color07: #af2896;
+    --genre-color08: #477d95;
+    --genre-color09: #509bf5;
+    --genre-color10: #1d3164;
+    --genre-color11: #e8115b;
+    --genre-color12: #e13300;
+    --genre-color13: #ba5d07;
+}
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.principal{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    justify-content: space-around;
+}
+
+.resentSearch{
+    display: flex;
+
+}
+
+.cuerpoPrincipal{
+    width: 70%;
+}
+
+main{
+    background-color: var(--secondary-color-01);
+    color: var(--secondary-color-04);
+}
+
+.busquedasRecent{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    overflow-x: hidden;
+    overflow-x: scroll;
+}
+
+.tarjetaSearch{
+    background-color: var(--secondary-color-02);
+    width: 250px;
+    height: 300px;
+    border-radius: 10px;
+    position:relative;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
