@@ -35,6 +35,7 @@
     flex-direction: row;
     height: 100vh;
     justify-content: space-around;
+    overflow-y: scroll;
 }
 
 .resentSearch{
@@ -44,6 +45,12 @@
 
 .cuerpoPrincipal{
     width: 70%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 10px;
+    height: 100rem;
+    /* overflow-y: scroll; */
 }
 
 main{
@@ -55,14 +62,43 @@ main{
     display: flex;
     flex-direction: row;
     gap: 10px;
-    overflow-x: hidden;
+    padding: 5px;
+    overflow: hidden;
+    overflow-x: scroll;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: center;
+    transition: all ease-in-out 1s;
+}
+.busquedasRecent:hover{
     overflow-x: scroll;
 }
 
+.busquedasRecent::-webkit-scrollbar{
+    width: 5px;
+    height: 5px;
+    background-color: var(---primary-color);
+    transition: all 0.5s ease-in;
+}
+
+.busquedasRecent::-webkit-scrollbar:hover{
+    background-color: var(--secondary-color-03);
+}
+
+.busquedasRecent::-webkit-scrollbar-thumb{
+    background-color: var(--secondary-color-03);
+    transition: all 2s ease-in;
+}
+.busquedasRecent:hover::-webkit-scrollbar-thumb{
+    background-color: #a1a1a1;
+    border-radius: 5px;
+}
+
+
 .tarjetaSearch{
     background-color: var(--secondary-color-02);
-    width: 250px;
-    height: 300px;
+    width: 270px;
+    height: 220px;
     border-radius: 10px;
     position:relative;
     padding: 10px;
@@ -71,11 +107,30 @@ main{
     gap: 10px;
 }
 
+.tarjetaSearch .descripcion{
+    font-size: 10px;
+    color: #aaa9a9;
+}
+
+.busquedaData{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.busquedaData p:nth-of-type(2){
+    font-size: 10px;
+}
+.busquedaData p:nth-of-type(1){
+    font-size: 20px;
+    font-weight: bold;
+}
+
 .botonEliminar{
     position: absolute;
     width: 15px;
     height: 15px;
-    right: 10px;
+    top: 5px;
+    right: 5px;
     color: var(--secondary-color-04);
     background: var(--secondary-color-01);
     font-size: 10px;
@@ -85,4 +140,118 @@ main{
     align-items: center;
     align-content: center;
     text-align: center;
+}
+
+.tarjetaLibrerie{
+    min-width: 400px;
+    height: 200px;
+    border-radius: 10px;
+    padding: 15px;
+    background: #1d3164;
+    position: relative;
+    overflow: hidden;
+}
+
+.tarjetaLibrerie .imagen{
+    width: 120px;
+    height: 120px;
+    background: #1db954;
+    position: absolute;
+    bottom: -20px;
+    right: -10px;
+    transform: rotate(42deg);
+    border-radius: 5px;
+    overflow: hidden;
+} 
+.tarjetaLibrerie .imagen img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.busquedasRecent .tarjetaLibrerie:nth-of-type(1){
+    background: var(--genre-color11);
+}
+
+.busquedasRecent .tarjetaLibrerie:nth-of-type(2){
+    background: var(--genre-color01);
+}
+.busquedasRecent .tarjetaLibrerie:nth-of-type(3){
+    background: var(--genre-color05);
+}
+
+.tarjetaLibrerie .titulo{
+    font-size: 37px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.gridDatos{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.tarjetaMusica{
+    width: 150px;
+    height: 150px;
+    padding: 10px 5px 0 15px;
+    position: relative;
+    background-color: #27856a;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.tarjetaMusica .imagen{
+    width: 100px;
+    height: 100px;
+    background: #1db954;
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    transform: rotate(42deg);
+    border-radius: 5px;
+    overflow: hidden;   
+}
+
+.tarjetaMusica .imagen img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tarjetaMusica .titulo{
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.gridDatos .tarjetaMusica:nth-of-type(1){
+    background: var(--secondary-color-02);
+}
+
+.gridDatos .tarjetaMusica:nth-of-type(2){
+    background: var(--genre-color10);
+}
+.gridDatos .tarjetaMusica:nth-of-type(3){
+    background: var(--genre-color09);
+}
+.gridDatos .tarjetaMusica:nth-of-type(4){
+    background: var(--genre-color08);
+}
+.gridDatos .tarjetaMusica:nth-of-type(5){
+    background: var(--genre-color02);
+}
+
+.gridDatos .tarjetaMusica:nth-of-type(6){
+    background: var(--genre-color06);
+}
+.gridDatos .tarjetaMusica:nth-of-type(7){
+    background: var(--genre-color05);
+}
+
+.gridDatos .tarjetaMusica:nth-of-type(8){
+    background: var(--genre-color10);
+}
+.gridDatos .tarjetaMusica:nth-of-type(9){
+    background: var(--genre-color05);
 }
