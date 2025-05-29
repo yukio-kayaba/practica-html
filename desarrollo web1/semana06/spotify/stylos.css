@@ -29,13 +29,73 @@
     padding: 0;
 }
 
+.navSecundario{
+    display: flex;
+    width: 100%;
+    padding: 5px;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.navSecundario .izquierda{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.navSecundario .buscador{
+    position: relative;
+}
+
+.navSecundario .buscador .lupa{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.navSecundario .botones{
+    background: var(--secondary-color-02);
+    color: var(--secondary-color-04);
+    height: 20px;
+    width: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    align-content: center;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#buscador{
+    width: 300px;
+    height: 30px;
+    padding-left: 35px;
+    border-radius: 10px;
+}
+
+.navSecundario .derecha{
+    display: flex;
+}
+select {
+  all: unset;
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background-color: white;
+  color: black;
+  border-radius: 8px;
+  appearance: auto; 
+  cursor: pointer;
+}
+
 
 .principal{
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    /* height: 100vh; */
     justify-content: space-around;
-    overflow-y: scroll;
 }
 
 .resentSearch{
@@ -49,8 +109,7 @@
     flex-direction: column;
     flex-wrap: nowrap;
     gap: 10px;
-    height: 100rem;
-    /* overflow-y: scroll; */
+    /* height: 100rem; */
 }
 
 main{
@@ -143,14 +202,31 @@ main{
 }
 
 .tarjetaLibrerie{
-    min-width: 400px;
+    min-width: 360px;
     height: 200px;
     border-radius: 10px;
     padding: 15px;
     background: #1d3164;
     position: relative;
     overflow: hidden;
+    transition: all 0.4s ease-in;
 }
+
+.tarjetaLibrerie .titulo{
+    position: relative;
+    font-size: 37px;
+    font-family: 'Times New Roman', Times, serif;
+    transition: all 0.4s ease-in;
+}
+
+.tarjetaLibrerie:hover .titulo {
+    transform: translateY(50px);
+    font-size: 50px;
+}
+.tarjetaLibrerie:hover .imagen{
+    transform: rotate(0) translate(-40px,-50px);
+}
+
 
 .tarjetaLibrerie .imagen{
     width: 120px;
@@ -162,6 +238,7 @@ main{
     transform: rotate(42deg);
     border-radius: 5px;
     overflow: hidden;
+    transition: all 0.4s ease-in;
 } 
 .tarjetaLibrerie .imagen img{
     width: 100%;
@@ -180,15 +257,10 @@ main{
     background: var(--genre-color05);
 }
 
-.tarjetaLibrerie .titulo{
-    font-size: 37px;
-    font-family: 'Times New Roman', Times, serif;
-}
-
 .gridDatos{
     display: grid;
     width: 100%;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
     gap: 10px;
 }
 
@@ -200,7 +272,14 @@ main{
     background-color: #27856a;
     border-radius: 2px;
     overflow: hidden;
+    transition: all 0.3s ease-in;
 }
+
+.tarjetaMusica:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
 
 .tarjetaMusica .imagen{
     width: 100px;
