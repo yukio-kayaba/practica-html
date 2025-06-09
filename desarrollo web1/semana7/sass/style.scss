@@ -1,0 +1,13 @@
+// @import 'var';
+@import 'buttons';
+@import 'mixins';
+
+
+.pruebas{
+    background-color: rgb(44, 43, 43);
+
+    button{
+        width: 150px;
+        // height: 30px;
+    }
+}

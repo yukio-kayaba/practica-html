@@ -1,0 +1,9 @@
+@use 'var';
+.btn-primary{
+    @include button-style( var.$primary-color,absolute);
+}
+
+.btn-secondary{
+    @include button-style( var.$secundary-color);
+    color: #2d3436;
+}

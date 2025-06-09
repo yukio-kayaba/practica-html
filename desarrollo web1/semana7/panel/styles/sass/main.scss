@@ -1,0 +1,75 @@
+@import './variables';
+@import './mixins';
+
+
+*{
+    @include config-inicial();
+}
+
+body{
+    font-family: $font-stck ;
+    background: $background-color;
+}
+
+.dashboard{
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar sidebar";
+    grid-template-columns: $sidebar-width 1fr;
+    grid-template-rows:  60px 1fr;
+    height: 100vh;
+
+    .header{
+        grid-area: header;
+        background: $primary-color ;
+        color: white;
+        @include flex-center;
+    }
+
+    .sidebar{
+        grid-area: sidebar;
+        background: $secondary-color;
+        padding: 20px;
+
+        ul{
+            list-style: none;
+            li ::after{
+                content: "";
+                // width: 10%;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 2px;
+                background-color: #000;
+                transition: all 0.3s ease-in;
+            } 
+            li {
+                margin: 10px 0;
+                position: relative;
+                cursor: pointer;
+
+                a{
+                    color: white;
+                    text-decoration: none;
+                }
+
+                &:hover::after{
+                    width: 100%;
+                    background-color: aquamarine;
+                }
+            }
+        }
+
+    }
+
+    .content{
+        grid-area: content;
+        padding: 20px;
+        .card{
+            @include card-style;
+        }
+    }
+}
+
+

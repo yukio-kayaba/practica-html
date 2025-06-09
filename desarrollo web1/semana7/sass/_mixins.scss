@@ -1,0 +1,10 @@
+@mixin button-style($color , $position:relative){
+    padding: 20px;
+    background-color: $color;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    position: $position;
+    right: 0;
+}
+
