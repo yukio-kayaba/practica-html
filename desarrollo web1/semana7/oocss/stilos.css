@@ -365,18 +365,21 @@ body {
 .card::after {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
+    top: -10%;
+    left: -10%;
     width: 200%;
     height: 200%;
     background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    transform: rotate(45deg);
+    /*transform: rotate(45deg);*/
     transition: all 0.5s;
+    color: #3182ce;
     opacity: 0;
 }
 
 .card:hover::after {
-    animation: shine 0.7s ease-in-out;
+    background-image: url("./resources/unamad_logo-sf.png");
+    opacity: 1;
+    /*animation: shine 0.7s ease-in-out;*/
 }
 
 .shine-img {
