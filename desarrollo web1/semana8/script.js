@@ -93,9 +93,8 @@ class Opciones{
 
 do{
 
-
     let opciones1 = prompt("Ingrese el ejercicio que desea realizar");
-
+    break;
     const datos = new Opciones();
 
     switch (opciones1) {
