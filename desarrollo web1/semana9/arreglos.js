@@ -32,37 +32,58 @@ class Practicas{
 
     ejercicio1(numero){
         numero = Number.parseInt(numero);
-
+        let result = "";
         for(let i = 0;i < 13;i++ ){
             let multiplicado = i * numero;
             if( multiplicado  % 2 === 0){
-                console.log(`el multiplicado : ${multiplicado} es par`);
+                result += ` ${i} * ${numero} = ${multiplicado} :: par  <br>`;
             }
         }
+        return result;
     }
+    /**
+     * @param {Number} numero 
+     */
     ejercicio2(numero){
         let resultado = 0;
+        let resul = " "+numero+" + ";
         do {
             resultado += numero;
             numero --;
-            if(numero == 0)break;
+            if(numero == 0){
+                resul += `${numero} :: `;
+                break;
+            };
+            resul += `${numero} +  `;
         } while (true);
-        console.log(resultado);
+        resul += ` ${resultado} `;
+        return resul;
     }
 
     ejercicio3(presupuesto){
-        presupuesto = Number.parseInt(presupuesto);
-        let catalogo = [50,20,10,100,30,10];
+        presupuesto = Number.parseInt(presupuesto); 
+        let selecionador = [];
+        let catalogo = [{nombre:"mouse",presio:50 },{nombre:"pendrive",presio:20 } ,{nombre:"panel",presio:10 },{nombre:"mouse 2",presio:100 },{nombre:"mouse 3",presio:30 },{nombre:"mouse 4",presio:10 }];
         let resultado = 0;
-        let cantida = 0;
-        catalogo.forEach(numero =>{
-            resultado += numero;
-            if( resultado >= presupuesto ){
+        let cambio = 0;
+        let result = "Productos : <br>";
+
+        catalogo.forEach(productos =>{
+            result += ` ${ productos.nombre} : ${productos.presio} <br>`;
+            if((resultado + productos.presio) > presupuesto){
                 return;
             }
-            cantida ++;
+            resultado += productos.presio;
+            selecionador.push(productos); 
         });
-        console.log(`total que puede comprar son  ${cantida}  :: ${resultado}`);
+
+        result += "  Solo puede comprar : <br>";
+        selecionador.forEach(element => {
+            result += `${ element.nombre } y `;
+        });
+        cambio = presupuesto - resultado; 
+        result += `total que puede comprar son  ${selecionador.length }  :: ${resultado} <br> su cambio : ${cambio}`;
+        return result;
     }
 
 }
@@ -74,20 +95,30 @@ console.warn( datos.indexArreglo(2));
 datos.getArreglo().forEach(element => console.log(element))
 
 
-do{
-    let opcion = prompt("Ingrese la opcion : ");
-    switch (opcion) {
-        case "1":
-            let tabla = prompt("INgrese la tabla de multiplicar ")
-            datos.ejercicio1(tabla);
-            break;
-        case "2":
-            let numero = prompt("INgrese el numero ");
-            datos.ejercicio2(numero)
-        default:
-            let presupuesto = prompt("presupuesto")
-            datos.ejercicio3(presupuesto);
-            break;
-    }
-}while(true);
+function inicializadorDeTarea(){
+    const btnOpcion1 = document.getElementById("btnOpcion1");
+    const btnOpcion2 = document.getElementById("btnOpcion2");
+    const btnOpcion3 = document.getElementById("btnOpcion3");
+
+    btnOpcion1.addEventListener("click",()=>{
+        let tabla = prompt("INgrese la tabla de multiplicar ")
+        let resultado = datos.ejercicio1(tabla);
+        document.getElementById("resultadoOpcion1").innerHTML = resultado;
+    });
+
+    btnOpcion2.addEventListener("click",()=>{
+        let numero = prompt("INgrese el numero ");
+        let resultado =  datos.ejercicio2( Number.parseInt(numero));
+        document.getElementById("resultadoOpcion2").innerHTML = resultado;
+    });
+
+    btnOpcion3.addEventListener("click",()=>{
+        let presupuesto = prompt("Ingrese el presupuesto : ")
+        let respuesta = datos.ejercicio3(presupuesto);
+        document.getElementById("resultadoOpcion3").innerHTML = respuesta;
+    })
+
+}
+
+inicializadorDeTarea();
 
