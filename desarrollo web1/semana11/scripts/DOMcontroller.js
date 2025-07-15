@@ -1,4 +1,3 @@
-
 /**
  * 
  * @param {string} valor 
@@ -10,12 +9,14 @@ function AddId(valor){
 /**
  * @typedef {{
  * id:number,
- * nombre:string,
- * precio:number
+ * email:string,
+ * first_name:string,
+ * last_name:string,
+ * avatar:string
  * }} ProductoTipo
  */
 
-class Productos{
+class DOMcontroller{
     /**
      * @type {Array<ProductoTipo>}
      */
@@ -43,11 +44,12 @@ class Productos{
      */
     #productoPrincipal(producto){
         let caja = document.createElement("div");
-        caja.id = producto.id;
         caja.innerHTML = `
-            <h2> ${producto.nombre} </h2>
-            <p> ${producto.precio} </p>
-        `;
+            <img src="${producto.avatar}" alt="" heigth="150px" >            
+            <p> <strong>Nombre: </strong> ${producto.first_name } </p>
+            <p> <strong>Nombre: </strong> ${producto.last_name } </p>
+            <p> <strong>Nombre: </strong> ${producto.email } </p>
+        `; 
         return caja;
     }
     
@@ -87,15 +89,4 @@ class Productos{
     }
 };
 
-const controlDOM = new Productos("MuestraTareas");
-const botonAgregar = document.getElementById("btnAgregar");
-controlDOM.dibujarProductos();
-botonAgregar.addEventListener("click",()=>{
-    let nombrePro = AddId("idProducto");
-    let precioProd = AddId("idPrecio");
-    controlDOM.AddProducto(nombrePro.value,precioProd.value);
-    nombrePro.value="";
-    precioProd.value = "";
-});
-
-
+export default DOMcontroller
