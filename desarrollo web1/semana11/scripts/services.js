@@ -1,12 +1,16 @@
-class Services{
-    obtenerUsuario = async ()=>{
-        const respuesta = await fetch("https://reqres.in/api/users",{
-            "Content-Type":"application/json",
-            "x-api-key":'regres-free-v1'
-        });
-        const datos = await respuesta.json();
-        return datos;
-    };
+class Services {
+  token = `..x9L4-a`;
+  ruta = "https://localhost:4000/api/tiempoToken";
+  obtenerUsuario = async () => {
+    const respuesta = await fetch(this.ruta, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `bearer ${this.token}`,
+      },
+    });
+    const datos = await respuesta.json();
+    console.log(datos);
+    return datos;
+  };
 }
-
-export default Services;

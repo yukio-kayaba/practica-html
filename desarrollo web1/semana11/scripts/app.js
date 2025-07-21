@@ -1,3 +1,4 @@
+import Services from "./services";
 
 const servicio = new Services();
 const DOM = new DOMcontroller("root");
