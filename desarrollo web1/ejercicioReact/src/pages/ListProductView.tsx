@@ -29,17 +29,27 @@ const ListProductView  = ()=>{
 
     return (
         <div>
-            productos
-            <tbody>
-                { productos.map((producto)=>(
-                    <tr key={producto.id} >
-                        <td> { producto.nombre } </td>
-                        <td> {producto.descripcion} </td>
-                        <td> {producto.color } </td>
-                        <td> {producto.precio} </td>
+            <p>Lista productos</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th> Nombre </th>
+                        <th> Descripcion </th>
+                        <th> Color </th>
+                        <th> Precio </th>
                     </tr>
-                ))}
-            </tbody>
+                </thead>
+                <tbody>
+                    { productos.map((producto)=>(
+                        <tr key={producto.id} >
+                            <td> { producto.nombre } </td>
+                            <td> {producto.descripcion} </td>
+                            <td> <p style={{background:producto.color}} > Cl </p> </td>
+                            <td> {producto.precio} </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </div>
     );
 }
