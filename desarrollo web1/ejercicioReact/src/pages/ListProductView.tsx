@@ -9,7 +9,6 @@ interface Productos{
     precio:number,
     foto:string,
     color:string
-
 }
 
 const ListProductView  = ()=>{

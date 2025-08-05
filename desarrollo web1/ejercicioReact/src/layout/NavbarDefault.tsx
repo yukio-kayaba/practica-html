@@ -1,6 +1,6 @@
-import { Nav } from 'react-bootstrap';
+import { Nav ,Navbar } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
 
 function NavbarDefault() {
   return (
@@ -8,10 +8,20 @@ function NavbarDefault() {
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
           <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Navbar.Toggle aria-control='basic-navbar-nav' />
+          <Navbar.Collapse id='basic-navbar-nav' />
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <ul>
+              <li>
+                <Link to="/" >Home</Link>
+              </li>
+              <li>
+                <Link to="/productos" >Productos</Link>
+              </li>
+              <li>
+                <Link to="/CreateProduct" > Crear nuevo Producto </Link>
+              </li>
+            </ul>
           </Nav>
         </Container>
       </Navbar>
