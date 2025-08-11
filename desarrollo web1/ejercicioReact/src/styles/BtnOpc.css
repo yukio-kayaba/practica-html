@@ -1,0 +1,44 @@
+
+.botonZ{
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-save{
+    background-color: rgb(25, 134, 31);
+    color: white;
+}
+
+.btn-error{
+    background-color: rgba(230, 46, 33, 0.884);
+    color: #000;
+}
+
+.btn-info{
+    background-color: rgb(245, 225, 45);
+    color: rgb(255, 104, 104);
+}
+
+.textoOculto{
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    position: absolute;
+    top: 0;
+    left: 70%;
+    border-radius: 10px;
+    margin: 5px solid #000;
+    font-size: 10px;
+    background-color: #313131;
+    padding: 5px;
+    color: white;
+    z-index: 10;
+}
+
+.botonZ:hover .textoOculto {
+    visibility: visible;
+    opacity: 1;
+}
+

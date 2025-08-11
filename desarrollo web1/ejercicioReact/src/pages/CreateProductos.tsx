@@ -25,6 +25,12 @@ export function CreateProducView(){
         await api.post("/productos",[datos]).then((respuesta)=>{
             console.log(respuesta.data);
             Swal.fire("Se envio correctamente");
+            setNombre("");
+            setDescripcion("");
+            setMarca("");
+            setPrecio("");
+            setFoto("");
+            setColor("");
         }).catch((error)=>{
             console.log(`error : ${error} `);
         })

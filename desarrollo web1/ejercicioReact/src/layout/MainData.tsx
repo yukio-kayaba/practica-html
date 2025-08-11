@@ -5,9 +5,7 @@ import NavbarDefault from "./NavbarDefault";
 export function MaindData(){
     return (
         <>
-            <header>
-                <NavbarDefault></NavbarDefault>
-            </header>
+            <NavbarDefault></NavbarDefault>            
             <main>
                 <Outlet></Outlet>
             </main>
